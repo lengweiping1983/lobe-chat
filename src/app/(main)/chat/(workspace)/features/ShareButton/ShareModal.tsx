@@ -69,13 +69,13 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
 
   const settings: FormItemProps[] = useMemo(
     () => [
-      {
-        children: <Switch />,
-        label: t('shareModal.withSystemRole'),
-        minWidth: undefined,
-        name: 'withSystemRole',
-        valuePropName: 'checked',
-      },
+      // {
+      //   children: <Switch />,
+      //   label: t('shareModal.withSystemRole'),
+      //   minWidth: undefined,
+      //   name: 'withSystemRole',
+      //   valuePropName: 'checked',
+      // },
       {
         children: <Switch />,
         hidden: tab !== Tab.Screenshot,

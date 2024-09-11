@@ -1,68 +1,69 @@
 'use client';
 
-import { ActionIcon, EditableMessage } from '@lobehub/ui';
-import { Skeleton } from 'antd';
-import { Edit } from 'lucide-react';
-import { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { ActionIcon, EditableMessage } from '@lobehub/ui';
+// import { Skeleton } from 'antd';
+// import { Edit } from 'lucide-react';
+import { memo } from 'react';
+// import { memo, useState } from 'react';
+// import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
-import useMergeState from 'use-merge-value';
+// import useMergeState from 'use-merge-value';
 
-import SidebarHeader from '@/components/SidebarHeader';
-import AgentInfo from '@/features/AgentInfo';
-import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
-import { useAgentStore } from '@/store/agent';
-import { agentSelectors } from '@/store/agent/selectors';
-import { useGlobalStore } from '@/store/global';
-import { ChatSettingsTabs } from '@/store/global/initialState';
-import { systemStatusSelectors } from '@/store/global/selectors';
-import { useSessionStore } from '@/store/session';
-import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selectors';
+// import SidebarHeader from '@/components/SidebarHeader';
+// import AgentInfo from '@/features/AgentInfo';
+// import { useOpenChatSettings } from '@/hooks/useInterceptingRoutes';
+// import { useAgentStore } from '@/store/agent';
+// import { agentSelectors } from '@/store/agent/selectors';
+// import { useGlobalStore } from '@/store/global';
+// import { ChatSettingsTabs } from '@/store/global/initialState';
+// import { systemStatusSelectors } from '@/store/global/selectors';
+// import { useSessionStore } from '@/store/session';
+// import { sessionMetaSelectors, sessionSelectors } from '@/store/session/selectors';
 
-import { useStyles } from './style';
+// import { useStyles } from './style';
 
 const SystemRole = memo(() => {
-  const [editing, setEditing] = useState(false);
-  const { styles } = useStyles();
-  const openChatSettings = useOpenChatSettings(ChatSettingsTabs.Prompt);
-  const [init, meta] = useSessionStore((s) => [
-    sessionSelectors.isSomeSessionActive(s),
-    sessionMetaSelectors.currentAgentMeta(s),
-  ]);
+  // const [editing, setEditing] = useState(false);
+  // const { styles } = useStyles();
+  // const openChatSettings = useOpenChatSettings(ChatSettingsTabs.Prompt);
+  // const [init, meta] = useSessionStore((s) => [
+  //   sessionSelectors.isSomeSessionActive(s),
+  //   sessionMetaSelectors.currentAgentMeta(s),
+  // ]);
 
-  const [systemRole, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentSystemRole(s),
-    s.updateAgentConfig,
-  ]);
+  // const [systemRole, updateAgentConfig] = useAgentStore((s) => [
+  //   agentSelectors.currentAgentSystemRole(s),
+  //   s.updateAgentConfig,
+  // ]);
 
-  const [showSystemRole, toggleSystemRole] = useGlobalStore((s) => [
-    systemStatusSelectors.showSystemRole(s),
-    s.toggleSystemRole,
-  ]);
+  // const [showSystemRole, toggleSystemRole] = useGlobalStore((s) => [
+  //   systemStatusSelectors.showSystemRole(s),
+  //   s.toggleSystemRole,
+  // ]);
 
-  const [open, setOpen] = useMergeState(false, {
-    defaultValue: showSystemRole,
-    onChange: toggleSystemRole,
-    value: showSystemRole,
-  });
+  // const [open, setOpen] = useMergeState(false, {
+  //   defaultValue: showSystemRole,
+  //   onChange: toggleSystemRole,
+  //   value: showSystemRole,
+  // });
 
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
 
-  const handleOpenWithEdit = () => {
-    if (!init) return;
-    setEditing(true);
-    setOpen(true);
-  };
+  // const handleOpenWithEdit = () => {
+  //   if (!init) return;
+  //   setEditing(true);
+  //   setOpen(true);
+  // };
 
-  const handleOpen = () => {
-    if (!init) return;
+  // const handleOpen = () => {
+  //   if (!init) return;
 
-    setOpen(true);
-  };
+  //   setOpen(true);
+  // };
 
   return (
     <Flexbox height={'fit-content'}>
-      <SidebarHeader
+      {/* <SidebarHeader
         actions={
           <ActionIcon icon={Edit} onClick={handleOpenWithEdit} size={'small'} title={t('edit')} />
         }
@@ -120,7 +121,7 @@ const SystemRole = memo(() => {
             <div className={styles.promptMask} />
           </>
         )}
-      </Flexbox>
+      </Flexbox> */}
     </Flexbox>
   );
 });

@@ -1,5 +1,6 @@
 import { Icon } from '@lobehub/ui';
-import { Blocks, Bot, BrainCog, MessagesSquare, Mic2, UserCircle } from 'lucide-react';
+// Bot
+import { Blocks, BrainCog, MessagesSquare, Mic2, UserCircle } from 'lucide-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,11 +22,11 @@ export const useCategory = ({ mobile }: UseCategoryOptions = {}) => {
         key: ChatSettingsTabs.Meta,
         label: t('agentTab.meta'),
       },
-      {
-        icon: <Icon icon={Bot} size={iconSize} />,
-        key: ChatSettingsTabs.Prompt,
-        label: t('agentTab.prompt'),
-      },
+      // {
+      //   icon: <Icon icon={Bot} size={iconSize} />,
+      //   key: ChatSettingsTabs.Prompt,
+      //   label: t('agentTab.prompt'),
+      // },
       {
         icon: <Icon icon={MessagesSquare} size={iconSize} />,
         key: ChatSettingsTabs.Chat,
