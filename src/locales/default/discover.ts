@@ -6,7 +6,7 @@ export default {
     conversation: {
       l1: '你好，我是 **{{name}}**，你可以问我任何问题，我会尽力回答你 ~',
       l2: '以下是我的能力介绍: ',
-      l3: '让我们开始对话吧！',
+      l3: '让我们开始吧！',
     },
     description: '助手介绍',
     detail: '详情',
